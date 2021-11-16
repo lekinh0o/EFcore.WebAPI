@@ -55,7 +55,7 @@ namespace EFcore.WebAPI.Controllers
 
             _context.SaveChanges();
             
-            return Ok(heroi);
+            return Ok();
         }
 
         // POST api/<ValuesController>
