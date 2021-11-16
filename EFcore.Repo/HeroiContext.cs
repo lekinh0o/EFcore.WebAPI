@@ -1,14 +1,13 @@
-﻿
-
-
-using EFcore.WebAPI.Models;
+﻿using EFcore.Dominio;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFcore.WebAPI.Data
+namespace EFcore.Repo
 {
 
     public class HeroiContext : DbContext
     {
+        
+        public HeroiContext(DbContextOptions<HeroiContext> options) : base(options) { }
 
         public DbSet<Heroi> Herois { get; set; }
 
@@ -19,12 +18,8 @@ namespace EFcore.WebAPI.Data
         public DbSet<HeroiBatalha> HeroiBatalhas { get; set; }
         public DbSet<IdentidadeSecreta> IdentidadeSecretas { get; set; }
 
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=HeroApp;Data Source=DESKTOP-JFU00CN\SQLEXPRESS");
-        }
-
+        
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

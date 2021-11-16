@@ -1,4 +1,4 @@
-﻿namespace EFcore.WebAPI.Models
+﻿namespace EFcore.Dominio
 {
     public class HeroiBatalha
     {

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-namespace EFcore.WebAPI.Models
-
+namespace EFcore.Dominio
 {
     public class Heroi
     {

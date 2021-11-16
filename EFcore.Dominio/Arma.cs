@@ -1,6 +1,7 @@
 using System;
 
-namespace EFcore.WebAPI.Models
+namespace EFcore.Dominio
+
 {
     public class Arma
     {
