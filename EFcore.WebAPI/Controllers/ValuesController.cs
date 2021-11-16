@@ -55,6 +55,27 @@ namespace EFcore.WebAPI.Controllers
 
             _context.SaveChanges();
             
+            return Ok(heroi);
+        }
+
+
+        // GET api/<ValuesController>/5
+        [HttpGet("AddRange")]
+        public ActionResult GetAddRange()
+        {
+
+            _context.AddRange(
+                new Heroi { Nome ="Capitão America"},
+                new Heroi { Nome = "Doutor Estranho" },
+                new Heroi { Nome = "Pantera Negra" },
+                new Heroi { Nome = "Viuva Negra" },
+                new Heroi { Nome = "Hulk" },
+                new Heroi { Nome = "Gavião Aqueiro" },
+                new Heroi { Nome = "Capitã Marvel" }
+            );
+
+            _context.SaveChanges();
+
             return Ok();
         }
 
@@ -71,9 +92,15 @@ namespace EFcore.WebAPI.Controllers
         }
 
         // DELETE api/<ValuesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpGet("Delete/{id}")]
+        public ActionResult Delete(int id)
         {
+            var heroi = _context.Herois
+                                 .Where(x => x.Id == id)
+                                 .Single();
+            _context.Herois.Remove(heroi);
+            _context.SaveChanges();
+            return Ok(heroi);
         }
     }
 }
