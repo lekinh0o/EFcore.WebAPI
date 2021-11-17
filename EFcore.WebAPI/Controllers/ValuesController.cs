@@ -1,4 +1,4 @@
-﻿using EFcore.Dominio;
+﻿/*using EFcore.Dominio;
 using EFcore.Repo;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace EFcore.WebAPI.Controllers
                                    select heroi).ToList();
              *var listHeroi = (from Heroi in _context.Herois
                              where Heroi.Nome.Contains(nome)
-                             select Heroi).ToList();
+                //             select Heroi).ToList();**
 
-            */
+            
             var listHeroi = _context.Herois
                             .Where(h => h.Nome.Contains(nome))
                             .ToList();
@@ -104,3 +104,4 @@ namespace EFcore.WebAPI.Controllers
         }
     }
 }
+*/
